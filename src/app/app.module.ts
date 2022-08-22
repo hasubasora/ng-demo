@@ -2,13 +2,14 @@
 import { NgModule } from '@angular/core';//核心
 import { BrowserModule } from '@angular/platform-browser';//浏览器核心
 import { FormsModule } from '@angular/forms'; //表单
+import { AppRoutingModule } from './app-routing.module';//把路径导入
 
-import { AppRoutingModule } from './app-routing.module';
 // //导入每个模板ts
 import { AppComponent } from './app.component';
 import { OrderComponent } from './order/order.component';
 import { MyOrderComponent } from './my-order/my-order.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomeComponent } from './home/home.component';
 
 
 //****************移动到单独路由 ****************/
@@ -25,7 +26,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 // //装饰器
 @NgModule({
   declarations: [//把模板组件加载出来
-    AppComponent, OrderComponent, MyOrderComponent, PageNotFoundComponent,
+    AppComponent, OrderComponent, MyOrderComponent, PageNotFoundComponent, HomeComponent,
   ],
   imports: [//使用的模型依赖
     BrowserModule
