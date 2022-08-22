@@ -1,0 +1,68 @@
+<app-order></app-order>
+<app-my-order></app-my-order>
+<!-- <app-first></app-first>
+<app-second></app-second>
+<app-root></app-root>
+<a routerLink="/order" routerLinkActive="active">order</a>
+<a routerLink="/first">first</a>
+<a routerLink="/second">second</a>
+<router-outlet></router-outlet> -->
+<p>文本渲染</p>
+<p [innerHTML]="msg"></p>
+<!-- 条件渲染 -->
+<p *ngIf="flag">显示</p>
+
+<!-- 绑定按钮 -->
+<button (click)="msg = '!!!!!!!!!!!!'">普通修改按钮</button>
+<button (click)="flag = !flag">切换true按钮</button>
+<button (click)="fnShow($event)">方法event操控按钮</button>
+
+
+<h3>CSS的绑定</h3>
+<p [class]="myclass">is error</p>
+<p [ngClass]="{ abc: flag }">is error</p>
+<p [class.abc]="flag">is error</p>
+<p [style.font-size.px]="20">is error</p>
+<p [style.font-size.en]="20">is error</p>
+<p [style.font-size.%]="20">is error</p>
+<p [style.color]="flag ? 'orange' : 'blue'">is error</p>
+<p [ngStyle]="mystyle">is error</p>
+<p [ngStyle]="{ color: 'pink', 'font-size': '18px', 'font-weight': '900' }">
+  is error
+</p>
+
+<ul>
+  <li *ngFor="let item of list;let i=index"
+  (click)="setCurrent($event,i)"
+  [ngClass]="{'active':i==current}"
+  >
+    {{i+1}} {{item}}
+  </li>
+</ul>
+
+<!-- 手动绑定 -->
+<!-- <input type="text" [value]="msg" (input)="msg=$event.target.value"> -->
+<!-- 自动绑定 -->
+<input type="text" [(ngModel)]="msg" >
+
+
+<!-- 单项绑定 -->
+
+
+<input type="checkbox" [(ngModel)]="set" name="" id="">
+<button [disabled]="!set">add</button>
+
+下拉-{{hobby}}
+<select name="" [(ngModel)]="hobby" id="">
+<option value="111">111</option>
+<option value="222">222</option>
+<option value="333">333</option>
+</select>
+<style>
+  .abc{
+    color:red
+  }
+  .active{
+    color: blueviolet;
+  }
+</style>
